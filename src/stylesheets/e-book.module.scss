@@ -235,6 +235,7 @@
     flex-direction: column;
     gap: 8px;
     padding: 20px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
     background-color: #fff;
     position: absolute;
     width: calc(100% - 40px);
@@ -368,6 +369,7 @@
   &.mobile {
     width: 100%;
     padding: 0;
+    padding-bottom: env(safe-area-inset-bottom);
     .ebook_play_bar_pc_area_l {
       gap: 10px;
     }
@@ -426,7 +428,7 @@
     height: 100%;
     .pages {
       position: relative;
-      z-index: 100;
+      z-index: 3;
       display: flex;
       flex-direction: row;
       width: fit-content;
@@ -440,7 +442,10 @@
 
 // eBook 콘텐츠 모바일 세로
 .ebook_body_mobile_p {
-  height: calc(100% - 60px);
+  height: calc(
+    100% - 60px - env(safe-area-inset-bottom) - env(safe-area-inset-top)
+  );
+  padding-top: env(safe-area-inset-top);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -487,10 +492,14 @@
     font-weight: 600;
     width: 100%;
     max-width: 320px;
-    height: calc(100% - 29px);
+    height: calc(
+      100% - 29px - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+    );
     background-color: #fff;
     margin-left: auto;
     padding: 5px 20px 20px 20px;
+    padding-top: calc(5px + env(safe-area-inset-top));
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
     display: flex;
     flex-direction: column;
     justify-content: space-between;

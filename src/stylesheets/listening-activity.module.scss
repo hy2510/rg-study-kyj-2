@@ -108,7 +108,7 @@
       }
     }
     &.done {
-      opacity: 0.3;
+      opacity: 0.5;
       cursor: default !important;
       pointer-events: none;
       &:hover {
@@ -137,6 +137,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
+      color: #000;
     }
     .wordBlock {
       position: absolute;
@@ -192,7 +193,7 @@
       font-size: 2.5em;
     }
     &.done {
-      opacity: 0.7;
+      opacity: 0.3;
       cursor: default !important;
       pointer-events: none;
       &:hover {

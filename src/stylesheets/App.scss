@@ -7,20 +7,17 @@ a {
   }
 }
 
-html,
-body {
-  background: #1a1a1a;
-}
-
 body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100dvh;
-  height: 100%;
+  overflow: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
   font-size: 18px;
   letter-spacing: -0.8px;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  background-color: #1a1a1a;
   @media screen and (max-width: 375px) {
     font-size: 15px;
   }

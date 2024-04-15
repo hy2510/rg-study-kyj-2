@@ -5,6 +5,9 @@
   padding: 10px 15px;
   animation-duration: 1s !important;
   position: fixed;
+  @media (prefers-color-scheme: dark) {
+    color: rgba($color: #fff, $alpha: 0.4);
+  }
 }
 @media (pointer: coarse) {
   .comment {
@@ -155,6 +158,7 @@
     padding: 12px 20px;
     transform: scale(1);
     transition: all 0.2s;
+    color: #fff;
     &:active {
       transform: scale(0.9);
     }

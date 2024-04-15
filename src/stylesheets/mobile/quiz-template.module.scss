@@ -15,8 +15,12 @@ $quizHeaderHeight: 60px;
 // 퀴즈템플릿
 .quizTemplate {
   width: 100vw;
-  height: 100dvh;
+  height: calc(
+    100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+  );
   overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
   &::before {
     content: '';
     @media (orientation: landscape) {
@@ -45,11 +49,10 @@ $quizHeaderHeight: 60px;
   height: $quizHeaderHeight;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: end;
+  align-items: center;
   margin: 0 20px;
   position: relative;
   -webkit-tap-highlight-color: transparent;
-  padding-top: env(safe-area-inset-top);
   @media (prefers-color-scheme: dark) {
     color: #ffffff;
   }
@@ -88,7 +91,7 @@ $quizHeaderHeight: 60px;
       background-size: 150px;
       background-repeat: no-repeat;
       position: absolute;
-      top: -35px;
+      top: -45px;
       left: -55px;
       z-index: 0;
     }
@@ -144,14 +147,19 @@ $quizHeaderHeight: 60px;
 .quizBody {
   width: calc(100% - 40px);
   max-width: 900px;
-  height: calc(100vh - ($quizHeaderHeight));
+  height: calc(
+    100dvh -
+      (
+        $quizHeaderHeight + env(safe-area-inset-top) +
+          env(safe-area-inset-bottom)
+      )
+  );
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding-bottom: env(safe-area-inset-bottom);
   .container {
     width: 100%;
     min-height: 450px;
@@ -168,7 +176,7 @@ $quizHeaderHeight: 60px;
   }
   @media (pointer: coarse) {
     .container {
-      margin-top: 15px;
+      margin-bottom: $quizHeaderHeight;
     }
   }
   @include darkMode {

@@ -88,7 +88,8 @@ export default function StorySideMenu({
                   }}
                 >
                   <img src={icon_quiz} alt="" />
-                  퀴즈 풀기
+                  {/* 퀴즈 풀기 */}
+                  학습하기
                 </div>
               </div>
               {(bookInfo.AnimationPath !== '' ||

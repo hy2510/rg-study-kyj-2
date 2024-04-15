@@ -17,10 +17,11 @@
     font-weight: 600;
     width: 100%;
     max-width: 320px;
-    height: calc(100% - 30px);
-    background-color: #333;
+    height: calc(100% - 30px - env(safe-area-inset-top));
+    background-color: #1a1a1a;
     margin-left: auto;
     padding: 10px 20px 20px 20px;
+    padding-top: calc(10px + env(safe-area-inset-top));
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -17,7 +17,7 @@ export default defineConfig({
   base: '/public/',
   plugins: [react(), tsconfigPaths()],
   server: {
-    host: '0.0.0.0',
+    host: '192.168.0.50',
     port: 3000,
   },
 })

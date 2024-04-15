@@ -15,8 +15,12 @@ $quizHeaderHeight: 60px;
 // 퀴즈템플릿
 .quizTemplate {
   width: 100vw;
-  height: 100dvh;
+  height: calc(
+    100dvh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
+  );
   overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 // 퀴즈헤더
@@ -24,7 +28,7 @@ $quizHeaderHeight: 60px;
   height: $quizHeaderHeight;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: end;
+  align-items: center;
   margin: 0 30px;
   position: relative;
   -webkit-tap-highlight-color: transparent;
@@ -66,7 +70,7 @@ $quizHeaderHeight: 60px;
       background-size: 150px;
       background-repeat: no-repeat;
       position: absolute;
-      top: -35px;
+      top: -45px;
       left: -55px;
       z-index: 0;
     }
@@ -124,7 +128,13 @@ $quizHeaderHeight: 60px;
 .quizBody {
   width: calc(100% - 40px);
   max-width: 900px;
-  height: calc(100vh - ($quizHeaderHeight));
+  height: calc(
+    100dvh -
+      (
+        $quizHeaderHeight + env(safe-area-inset-top) +
+          env(safe-area-inset-bottom)
+      )
+  );
   margin: auto;
   display: flex;
   flex-direction: column;

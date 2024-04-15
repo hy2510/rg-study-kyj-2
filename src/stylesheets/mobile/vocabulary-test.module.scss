@@ -5,6 +5,9 @@
   padding: 10px 15px;
   animation-duration: 1s !important;
   position: fixed;
+  @media (prefers-color-scheme: dark) {
+    color: rgba($color: #fff, $alpha: 0.4);
+  }
 }
 @media (pointer: coarse) {
   .comment {

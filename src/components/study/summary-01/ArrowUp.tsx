@@ -12,7 +12,8 @@ const style = isMobile ? summaryCSSMobile : summaryCSS
 export default function ArrowUp() {
   return (
     <div className={style.correctDirection}>
-      <IcoArrowUp isColor width={24} height={24} />
+      {/* <IcoArrowUp isColor width={24} height={24} /> */}
+      <div className={style.iconArrowUp}></div>
     </div>
   )
 }
